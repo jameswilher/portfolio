@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>James Wilher P. Atenta | Operations Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #111827;
+      --muted: #5f6673;
+      --soft: #e8edf3;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --navy: #0d233f;
+      --navy2: #143a63;
+      --gold: #d7a843;
+      --green: #2d6a4f;
+      --blue-soft: #edf5ff;
+      --gold-soft: #fff6dd;
+      --shadow: 0 24px 80px rgba(13, 35, 63, 0.12);
+      --radius: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(215,168,67,0.18), transparent 34rem),
+        radial-gradient(circle at 90% 10%, rgba(20,58,99,0.12), transparent 32rem),
+        var(--bg);
+      line-height: 1.7;
+      font-size: 15.5px;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1180px, calc(100% - 34px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 14px;
+      z-index: 20;
+      width: min(1180px, calc(100% - 34px));
+      margin: 14px auto 0;
+      padding: 13px 16px 13px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(232,237,243,0.9);
+      border-radius: 999px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 50px rgba(13,35,63,0.08);
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      background: var(--navy);
+      color: white !important;
+      padding: 9px 15px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 22px;
+      padding: 78px 0 42px;
+      align-items: stretch;
+    }
+
+    .hero-main {
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      border-radius: 38px;
+      padding: clamp(34px, 6vw, 70px);
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 72%, #1f5b90 100%);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,.13) 1px, transparent 1px);
+      background-size: 22px 22px;
+      opacity: .2;
+    }
+
+    .hero-main:after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: rgba(215,168,67,.17);
+      right: -170px;
+      top: -170px;
+    }
+
+    .kicker {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #f5d37d;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .kicker:before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 0 7px rgba(215,168,67,.18);
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: .93;
+      letter-spacing: -.055em;
+      max-width: 820px;
+      margin-bottom: 22px;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      font-size: 18px;
+      color: rgba(255,255,255,.78);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 42px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 19px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 900;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn.gold {
+      background: var(--gold);
+      color: #15110a;
+      box-shadow: 0 14px 32px rgba(215,168,67,.24);
+    }
+
+    .btn.ghost {
+      color: white;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    .hero-note {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .note {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 20px;
+      background: rgba(255,255,255,.07);
+    }
+
+    .note strong {
+      display: block;
+      color: white;
+      font-size: 22px;
+      letter-spacing: -.04em;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .note span {
+      display: block;
+      color: rgba(255,255,255,.65);
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .profile-card,
+    .fit-card,
+    .contact-card,
+    .section-card,
+    .mini-card {
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(232,237,243,.95);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(13,35,63,.08);
+    }
+
+    .profile-card {
+      padding: 28px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      background: #eaf6ef;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .status span {
+      width: 9px;
+      height: 9px;
+      background: #2f9c60;
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(47,156,96,.13);
+    }
+
+    .profile-card h2 {
+      color: var(--navy);
+      font-size: 30px;
+      line-height: 1.08;
+      letter-spacing: -.055em;
+      margin-bottom: 14px;
+    }
+
+    .profile-card p,
+    .fit-card p,
+    .contact-card p {
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    .fit-card {
+      padding: 24px;
+    }
+
+    .fit-card h3,
+    .contact-card h3,
+    .mini-card h3 {
+      color: var(--navy);
+      letter-spacing: -.035em;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .fit-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .fit-list div {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .check {
+      width: 26px;
+      height: 26px;
+      border-radius: 9px;
+      background: var(--gold-soft);
+      color: #9d741d;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .contact-card {
+      padding: 24px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 900;
+      word-break: break-word;
+    }
+
+    section { padding: 58px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 24px;
+    }
+
+    .label {
+      color: #a87414;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-head h2,
+    .section-card h2 {
+      color: var(--navy);
+      font-size: clamp(32px, 5vw, 50px);
+      line-height: 1.04;
+      letter-spacing: -.06em;
+    }
+
+    .section-head p {
+      max-width: 480px;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .mini-card {
+      padding: 26px;
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: var(--blue-soft);
+      color: var(--navy);
+      font-size: 23px;
+      margin-bottom: 16px;
+    }
+
+    .mini-card p {
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    .role-map {
+      background: var(--card);
+      border: 1px solid var(--soft);
+      border-radius: 34px;
+      padding: clamp(30px, 6vw, 56px);
+      box-shadow: var(--shadow);
+    }
+
+    .map-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .map-row {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .map-left,
+    .map-right {
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--soft);
+    }
+
+    .map-left {
+      background: var(--navy);
+      color: white;
+    }
+
+    .map-left strong,
+    .map-right strong {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -.03em;
+      margin-bottom: 5px;
+    }
+
+    .map-left span {
+      color: rgba(255,255,255,.68);
+      font-size: 13px;
+    }
+
+    .map-right {
+      background: #fbfdff;
+      color: var(--muted);
+    }
+
+    .map-right strong { color: var(--navy); }
+
+    .proof {
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      border-radius: 38px;
+      color: white;
+      padding: clamp(30px, 6vw, 58px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .proof:before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: rgba(215,168,67,.12);
+      right: -160px;
+      bottom: -180px;
+    }
+
+    .proof .section-head { position: relative; z-index: 1; }
+    .proof .section-head h2 { color: white; }
+    .proof .section-head p { color: rgba(255,255,255,.68); }
+
+    .project-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .project {
+      padding: 25px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(215,168,67,.16);
+      color: #f1d58b;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .project h3 {
+      color: white;
+      font-size: 21px;
+      line-height: 1.15;
+      letter-spacing: -.035em;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: rgba(255,255,255,.68);
+      font-size: 14.5px;
+    }
+
+    .section-card {
+      padding: clamp(30px, 6vw, 56px);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0;
+      margin-top: 26px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 26px;
+      padding: 22px 0;
+      border-top: 1px solid var(--soft);
+    }
+
+    .timeline-item:first-child { border-top: 0; }
+
+    .time {
+      color: #a87414;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .timeline-item h3 {
+      color: var(--navy);
+      font-size: 21px;
+      letter-spacing: -.04em;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p { color: var(--muted); }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 15px;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #f2f5f8;
+      border: 1px solid var(--soft);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .closing {
+      padding: 40px 0 84px;
+    }
+
+    .closing-card {
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      color: white;
+      border-radius: 38px;
+      padding: clamp(34px, 7vw, 74px);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .closing-card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 6vw, 66px);
+      letter-spacing: -.05em;
+      line-height: .98;
+      margin-bottom: 16px;
+    }
+
+    .closing-card p {
+      color: rgba(255,255,255,.72);
+      max-width: 720px;
+      margin: 0 auto 24px;
+      font-size: 17px;
+    }
+
+    .footer {
+      padding: 24px 0 42px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 950px) {
+      .hero,
+      .hero-note,
+      .grid-3,
+      .grid-2,
+      .map-row,
+      .project-grid,
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main { min-height: auto; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 10px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 6px; }
+      .nav-links { display: none; }
+      .nav { border-radius: 22px; }
+    }
+
+    @media (max-width: 560px) {
+      body { font-size: 15px; }
+      .wrap, .nav { width: min(100% - 24px, 1180px); }
+      .hero { padding-top: 44px; }
+      .hero-main, .proof, .role-map, .section-card, .closing-card { border-radius: 26px; }
+      .hero-actions { display: grid; }
+      .btn { width: 100%; }
+      section { padding: 44px 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">James Wilher P. Atenta</div>
+    <div class="nav-links">
+      <a href="#fit">Role Fit</a>
+      <a href="#proof">Proof</a>
+      <a href="#plan">90-Day Plan</a>
+      <a href="#tools">Tools</a>
+      <a href="mailto:jamesatnta@gmail.com" class="nav-cta">Contact</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-main">
+        <div class="kicker">Operations Leader Portfolio</div>
+        <h1>Founder-minded operator for high-pressure property operations.</h1>
+        <p class="hero-copy">
+          I bring hands-on experience building and running businesses, managing people, tracking numbers, fixing operational gaps, and using AI tools to simplify repetitive work. I am positioning this portfolio for an Associate Director role in short-term rental operations, where owner trust, team accountability, financial discipline, and fast problem-solving matter every day.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn gold" href="mailto:jamesatnta@gmail.com">Email Me</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/jameswilher/" target="_blank">LinkedIn Profile</a>
+        </div>
+
+        <div class="hero-note">
+          <div class="note">
+            <strong>4+</strong>
+            <span>Businesses built, operated, or launched from scratch</span>
+          </div>
+          <div class="note">
+            <strong>₱80K</strong>
+            <span>Daily retail sales target reached through execution and customer handling</span>
+          </div>
+          <div class="note">
+            <strong>91.84 Mbps</strong>
+            <span>Fiber internet with Smart 5G backup and UPS power backup</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="profile-card">
+          <div class="status"><span></span> Available for remote leadership roles</div>
+          <h2>Built for ownership, not task-following.</h2>
+          <p>
+            My advantage is not only software knowledge. It is real operating experience: making decisions, leading people, protecting margins, dealing with customers, organizing messy work, and keeping the business moving under pressure.
+          </p>
+        </div>
+
+        <div class="fit-card">
+          <h3>Best fit for this role</h3>
+          <div class="fit-list">
+            <div><span class="check">✓</span><span>P&L management, cost control, and financial reporting experience from real businesses</span></div>
+            <div><span class="check">✓</span><span>Team leadership experience, including hiring, delegation, accountability, and daily operations</span></div>
+            <div><span class="check">✓</span><span>Strong communicator with customer-facing, supplier-facing, and owner-style experience</span></div>
+            <div><span class="check">✓</span><span>AI-fluent operator who uses tools to replace manual work and create simple systems</span></div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Contact</h3>
+          <p>Manila, Philippines. Open to Perth-aligned remote work and long-term operations leadership.</p>
+          <div class="contact-links">
+            <a href="mailto:jamesatnta@gmail.com">jamesatnta@gmail.com</a>
+            <a href="tel:+639606239178">+63 960 623 9178</a>
+            <a href="https://www.linkedin.com/in/jameswilher/" target="_blank">linkedin.com/in/jameswilher</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="fit">
+      <div class="section-head">
+        <div>
+          <div class="label">Role Fit</div>
+          <h2>How my experience transfers to STR operations.</h2>
+        </div>
+        <p>
+          I am not presenting myself as someone who only follows a checklist. I am presenting myself as someone who can learn the full operation, find friction, simplify it, and own outcomes.
+        </p>
+      </div>
+
+      <div class="role-map">
+        <div class="map-grid">
+          <div class="map-row">
+            <div class="map-left">
+              <strong>Property owner relationships</strong>
+              <span>Trust, clarity, expectation management</span>
+            </div>
+            <div class="map-right">
+              <strong>My transferable proof</strong>
+              Managed customer relationships, supplier negotiations, staff issues, and business reputation across service, retail, F&B, and distribution environments.
+            </div>
+          </div>
+
+          <div class="map-row">
+            <div class="map-left">
+              <strong>Remote team leadership</strong>
+              <span>Manager, customer service, admin, accounts</span>
+            </div>
+            <div class="map-right">
+              <strong>My transferable proof</strong>
+              Hired, trained, delegated, and monitored staff across business operations. Built systems that allowed a salon branch to continue under delegated management.
+            </div>
+          </div>
+
+          <div class="map-row">
+            <div class="map-left">
+              <strong>P&L and financial literacy</strong>
+              <span>Revenue, cost, margin, reporting</span>
+            </div>
+            <div class="map-right">
+              <strong>My transferable proof</strong>
+              Handled pricing, expenses, supplier costs, daily sales targets, inventory value, financial tracking, and P&L responsibility across multiple ventures.
+            </div>
+          </div>
+
+          <div class="map-row">
+            <div class="map-left">
+              <strong>Operational friction</strong>
+              <span>Fix problems before they repeat</span>
+            </div>
+            <div class="map-right">
+              <strong>My transferable proof</strong>
+              Built trackers, inventory reports, workflows, customer handling routines, and simple systems to keep operations organized without constant supervision.
+            </div>
+          </div>
+
+          <div class="map-row">
+            <div class="map-left">
+              <strong>AI-driven model</strong>
+              <span>Replace manual work with smarter process</span>
+            </div>
+            <div class="map-right">
+              <strong>My transferable proof</strong>
+              Daily user of ChatGPT, Claude AI, Canva, Google Sheets, Excel, and automation-style workflows for research, writing, reporting, templates, and process cleanup.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <div class="label">Operating Strengths</div>
+          <h2>What I can own inside the business.</h2>
+        </div>
+        <p>
+          The job post is asking for a driver. These are the areas where I can immediately bring structure, follow-through, and decision-making.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="mini-card">
+          <div class="icon">🤝</div>
+          <h3>Stakeholder communication</h3>
+          <p>Clear updates, calm explanations, expectation setting, issue escalation, and professional communication with owners, customers, sales teams, and internal staff.</p>
+        </article>
+
+        <article class="mini-card">
+          <div class="icon">📊</div>
+          <h3>P&L and KPI ownership</h3>
+          <p>Tracking financial performance, understanding cost drivers, watching margins, building scorecards, and making the numbers easier for the team to act on.</p>
+        </article>
+
+        <article class="mini-card">
+          <div class="icon">👥</div>
+          <h3>Team accountability</h3>
+          <p>Assigning responsibilities, checking output, documenting workflows, spotting weak links, and helping team members understand what good performance looks like.</p>
+        </article>
+
+        <article class="mini-card">
+          <div class="icon">⚙️</div>
+          <h3>Process improvement</h3>
+          <p>Turning messy tasks into simple workflows, checklists, trackers, templates, SOPs, and repeatable routines that reduce mistakes and improve consistency.</p>
+        </article>
+
+        <article class="mini-card">
+          <div class="icon">🧠</div>
+          <h3>Fast comprehension</h3>
+          <p>Learning the business model quickly, understanding instructions deeply, asking the right questions, and simplifying complex information into actionable next steps.</p>
+        </article>
+
+        <article class="mini-card">
+          <div class="icon">🤖</div>
+          <h3>AI and technical intuition</h3>
+          <p>Using AI to draft owner updates, summarize issues, clean data, build templates, create SOPs, analyze recurring problems, and reduce repetitive admin work.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="proof" id="proof">
+      <div class="section-head">
+        <div>
+          <div class="label">Proof of Work</div>
+          <h2>Real business ownership, not just theory.</h2>
+        </div>
+        <p>
+          These are the experiences that shaped how I work: practical, numbers-aware, customer-aware, and accountable for results.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project">
+          <div class="chips">
+            <span class="chip">2022 to Present</span>
+            <span class="chip">Founder Operations</span>
+          </div>
+          <h3>The Empire Salon, Loreto Branch</h3>
+          <p>
+            Launched and operated a full-service salon from zero. Managed supplier negotiations, setup, hiring, staff management, customer experience, promotions, daily operations, and delegation. Built the structure so the branch could continue operating under management.
+          </p>
+        </article>
+
+        <article class="project">
+          <div class="chips">
+            <span class="chip">Retail Operations</span>
+            <span class="chip">Customer and Inventory</span>
+          </div>
+          <h3>Retail Sales and Inventory Experience</h3>
+          <p>
+            Handled 70 to 100 customers daily, supported product recommendations and upselling, monitored stock, and helped reach a ₱80,000 daily sales target. Created inventory reports across distributor accounts and prepared data for supplier or manufacturer review.
+          </p>
+        </article>
+
+        <article class="project">
+          <div class="chips">
+            <span class="chip">2020 to 2022</span>
+            <span class="chip">Pandemic Operations</span>
+          </div>
+          <h3>Milk Tea Retail Business</h3>
+          <p>
+            Co-founded and operated an F&B business through a difficult market period. Supported delivery-first selling, Facebook marketing, supply purchasing, customer communication, financial tracking, and day-to-day operating decisions.
+          </p>
+        </article>
+
+        <article class="project">
+          <div class="chips">
+            <span class="chip">2024 to 2025</span>
+            <span class="chip">Distribution</span>
+          </div>
+          <h3>Wholesale Distribution Project</h3>
+          <p>
+            Managed sourcing, logistics coordination, account handling, sales tracking, and stock movement. Made a clean exit decision when regulatory pressure changed the risk profile, choosing discipline over emotional attachment to the business.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-card" id="plan">
+      <div class="label">First 90 Days</div>
+      <h2>How I would approach the Associate Director role.</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="time">Days 1 to 15</div>
+          <div>
+            <h3>Learn the full operation deeply.</h3>
+            <p>I would map the current STR workflow from owner onboarding, guest communication, cleaning, maintenance, pricing, calendar management, admin, accounts, and reporting. The goal is to understand how the business really works before changing anything.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">Days 16 to 30</div>
+          <div>
+            <h3>Identify friction, delays, and unclear ownership.</h3>
+            <p>I would review recurring issues, team handoffs, owner complaints, guest problems, delayed tasks, messy reports, missing KPIs, and manual work that can be simplified or automated.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">Days 31 to 60</div>
+          <div>
+            <h3>Build scorecards, SOPs, and clearer communication rhythms.</h3>
+            <p>I would help create practical KPIs for team performance, owner updates, guest response quality, task completion, issue resolution, financial reporting, and operational accountability.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">Days 61 to 90</div>
+          <div>
+            <h3>Use AI and systems to remove repetitive manual work.</h3>
+            <p>I would look for repeatable admin, reporting, owner communication, guest messaging, task tracking, and document workflows that can be supported by AI, templates, automations, and cleaner team systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="section-head">
+        <div>
+          <div class="label">Tools and Work Setup</div>
+          <h2>Ready for remote operations work.</h2>
+        </div>
+        <p>
+          I can follow your current systems or help improve them once I understand the full workflow.
+        </p>
+      </div>
+
+      <div class="tools-grid">
+        <article class="mini-card">
+          <div class="icon">🧰</div>
+          <h3>Tools I use</h3>
+          <p>Comfortable with business, reporting, ecommerce, content, and AI tools used by remote teams.</p>
+          <div class="tags">
+            <span class="tag">Google Sheets</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Google Workspace</span>
+            <span class="tag">ChatGPT</span>
+            <span class="tag">Claude AI</span>
+            <span class="tag">Canva</span>
+            <span class="tag">CapCut</span>
+            <span class="tag">Meta Business Suite</span>
+            <span class="tag">Shopify</span>
+            <span class="tag">TikTok Shop</span>
+            <span class="tag">Shopee</span>
+          </div>
+        </article>
+
+        <article class="mini-card">
+          <div class="icon">🏡</div>
+          <h3>STR tools I am ready to learn fast</h3>
+          <p>I can quickly learn property management systems, guest messaging tools, task boards, cleaning schedules, owner reporting dashboards, pricing tools, and channel management workflows.</p>
+          <div class="tags">
+            <span class="tag">PMS workflows</span>
+            <span class="tag">Guest messaging</span>
+            <span class="tag">Owner reporting</span>
+            <span class="tag">Team scorecards</span>
+            <span class="tag">SOP libraries</span>
+            <span class="tag">AI templates</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-card">
+        <h2>I do not wait for perfect instructions.</h2>
+        <p>
+          I learn the operation, find the friction, simplify the process, communicate clearly, and take ownership of the outcome. That is the mindset I would bring to your STR management team.
+        </p>
+        <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
+          <a class="btn gold" href="mailto:jamesatnta@gmail.com">Contact James</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/jameswilher/" target="_blank">Open LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    James Wilher P. Atenta • Manila, Philippines • Available for remote operations leadership
+  </footer>
+</body>
+</html>
