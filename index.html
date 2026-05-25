@@ -639,6 +639,127 @@
       font-size: 13px;
     }
 
+
+    .gallery-section {
+      background: var(--card);
+      border: 1px solid var(--soft);
+      border-radius: 34px;
+      padding: clamp(30px, 6vw, 56px);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-note {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--gold-soft);
+      color: #6f4d08;
+      font-size: 13.5px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .gallery-category {
+      margin-top: 28px;
+    }
+
+    .gallery-category-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+
+    .gallery-category-head h3 {
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: -.045em;
+    }
+
+    .gallery-category-head p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 560px;
+    }
+
+    .photo-pair {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .proof-shot {
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid var(--soft);
+      background: #f8fafc;
+      box-shadow: 0 18px 45px rgba(13,35,63,.07);
+    }
+
+    .proof-image-wrap {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      background:
+        linear-gradient(135deg, rgba(13,35,63,.08), rgba(215,168,67,.10)),
+        #f3f6fa;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .proof-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .25s ease;
+    }
+
+    .proof-shot:hover .proof-image-wrap img {
+      transform: scale(1.04);
+    }
+
+    .placeholder-text {
+      position: absolute;
+      inset: 0;
+      display: none;
+      place-items: center;
+      text-align: center;
+      padding: 24px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.5;
+    }
+
+    .proof-shot.missing-image .placeholder-text {
+      display: grid;
+    }
+
+    .proof-shot.missing-image img {
+      display: none;
+    }
+
+    .proof-caption {
+      padding: 18px;
+    }
+
+    .proof-caption h4 {
+      color: var(--navy);
+      font-size: 17px;
+      line-height: 1.15;
+      letter-spacing: -.035em;
+      margin-bottom: 6px;
+    }
+
+    .proof-caption p {
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
     @media (max-width: 950px) {
       .hero,
       .hero-note,
@@ -646,7 +767,8 @@
       .grid-2,
       .map-row,
       .project-grid,
-      .tools-grid {
+      .tools-grid,
+      .photo-pair {
         grid-template-columns: 1fr;
       }
 
@@ -675,6 +797,7 @@
     <div class="nav-links">
       <a href="#fit">Role Fit</a>
       <a href="#proof">Proof</a>
+      <a href="#gallery">Visual Proof</a>
       <a href="#plan">90-Day Plan</a>
       <a href="#tools">Tools</a>
       <a href="mailto:jamesatnta@gmail.com" class="nav-cta">Contact</a>
@@ -920,6 +1043,206 @@
         </article>
       </div>
     </section>
+
+
+    <section id="gallery">
+      <div class="gallery-section">
+        <div class="section-head">
+          <div>
+            <div class="label">Visual Proof</div>
+            <h2>Business ownership and operations in pictures.</h2>
+          </div>
+          <p>
+            This section is designed to show proof behind the claims: real business setup, inventory work, customer-facing operations, marketing execution, sourcing, and brand-building.
+          </p>
+        </div>
+
+        <div class="gallery-note">
+          Upload your photos inside an <strong>images</strong> folder using the exact file names shown below. If a photo is missing, the portfolio will show a clean placeholder instead of breaking the layout.
+        </div>
+
+        <div class="gallery-category">
+          <div class="gallery-category-head">
+            <h3>Salon Branch Operations</h3>
+            <p>Use these for The Empire Salon branch, setup, service area, signage, staff workspace, or behind-the-scenes operations.</p>
+          </div>
+          <div class="photo-pair">
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/salon-branch-1.jpg" alt="The Empire Salon branch front or interior" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/salon-branch-1.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Branch Setup</h4>
+                <p>Physical business presence, service environment, and branch presentation.</p>
+              </div>
+            </article>
+
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/salon-branch-2.jpg" alt="Salon operations, staff area, or service workflow" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/salon-branch-2.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Daily Operations</h4>
+                <p>Staff coordination, customer service flow, or operating setup.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="gallery-category">
+          <div class="gallery-category-head">
+            <h3>Inventory and Reporting</h3>
+            <p>Use screenshots of trackers, reports, stock monitoring, or distributor inventory. Blur private numbers if needed.</p>
+          </div>
+          <div class="photo-pair">
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/inventory-report-1.jpg" alt="Inventory tracker or spreadsheet report" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/inventory-report-1.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Stock Tracking</h4>
+                <p>Inventory monitoring, stock visibility, or distributor reporting.</p>
+              </div>
+            </article>
+
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/inventory-report-2.jpg" alt="Sales, stock, or reporting dashboard proof" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/inventory-report-2.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Operational Reporting</h4>
+                <p>Reports, trackers, or data used to support business decisions.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="gallery-category">
+          <div class="gallery-category-head">
+            <h3>Retail and Customer Operations</h3>
+            <p>Use store photos, product displays, customer service area, POS area, or evidence of retail execution.</p>
+          </div>
+          <div class="photo-pair">
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/retail-operations-1.jpg" alt="Retail store operations or product display" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/retail-operations-1.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Customer-Facing Work</h4>
+                <p>Retail environment, product handling, and service execution.</p>
+              </div>
+            </article>
+
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/retail-operations-2.jpg" alt="Retail customer handling, product shelves, or sales floor proof" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/retail-operations-2.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Sales Floor Discipline</h4>
+                <p>Product presentation, customer support, upselling, or store routines.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="gallery-category">
+          <div class="gallery-category-head">
+            <h3>Marketing Execution</h3>
+            <p>Use Facebook page screenshots, posts, campaigns, customer inquiries, promotions, or content proof.</p>
+          </div>
+          <div class="photo-pair">
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/marketing-proof-1.jpg" alt="Facebook page, post, or campaign proof" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/marketing-proof-1.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Social Media Management</h4>
+                <p>Page activity, posts, promotions, and brand communication.</p>
+              </div>
+            </article>
+
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/marketing-proof-2.jpg" alt="Customer inquiries, engagement, or marketing execution proof" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/marketing-proof-2.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Customer Engagement</h4>
+                <p>Inquiries, content, promotions, or community/customer interaction.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="gallery-category">
+          <div class="gallery-category-head">
+            <h3>Wholesale, Sourcing, and Stock Movement</h3>
+            <p>Use product stock photos, order preparation, logistics proof, supplier coordination, or stock movement screenshots.</p>
+          </div>
+          <div class="photo-pair">
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/wholesale-proof-1.jpg" alt="Wholesale stock or product sourcing proof" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/wholesale-proof-1.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Product Sourcing</h4>
+                <p>Supplier coordination, stock selection, or product procurement proof.</p>
+              </div>
+            </article>
+
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/wholesale-proof-2.jpg" alt="Wholesale logistics, stock movement, or order handling proof" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/wholesale-proof-2.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Stock Movement</h4>
+                <p>Distribution, order handling, logistics, or account support.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="gallery-category">
+          <div class="gallery-category-head">
+            <h3>Brand and Product Launch</h3>
+            <p>Use clothing label photos, shirt designs, product mockups, packaging, posts, or launch materials.</p>
+          </div>
+          <div class="photo-pair">
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/brand-launch-1.jpg" alt="Clothing label product or design proof" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/brand-launch-1.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Product Design</h4>
+                <p>Brand concept, shirt design, mockup, or product development proof.</p>
+              </div>
+            </article>
+
+            <article class="proof-shot">
+              <div class="proof-image-wrap">
+                <img src="images/brand-launch-2.jpg" alt="Brand launch, product photo, or clothing label post proof" onerror="this.closest('.proof-shot').classList.add('missing-image');">
+                <div class="placeholder-text">Upload photo as:<br>images/brand-launch-2.jpg</div>
+              </div>
+              <div class="proof-caption">
+                <h4>Launch Execution</h4>
+                <p>Product release, brand content, early market proof, or sales material.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section class="section-card" id="plan">
       <div class="label">First 90 Days</div>
